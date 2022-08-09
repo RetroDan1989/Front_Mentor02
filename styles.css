@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fraunces', serif;
+    font-family: 'Montserrat', sans-serif;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    padding: 20px;
+
+    background-color: var(--Cream);
+}
+
+
+/* Guia de colores y fuente */
+
+:root {
+
+    /* Primary */
+    --Dark_cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    /* Neutral */
+
+    --Very_dark_blue: hsl(212, 21%, 14%);
+    --Dark_grayish_blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+    --Font_size_paragraph:14px;
+}
+
+/* Nombrar los elementos */
+
+.card__section01 {
+    grid-area: section_01;
+    display: flex;
+}
+
+.card__section02 {
+    grid-area: section_02;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.card {
+    overflow: hidden;
+    background-color: var(--White);
+    border-radius: 10px;
+    max-width: 600px;
+    min-width: 344px;
+    min-height: 410px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+    "section_01 section_02" 
+    ;
+}
+
+/* Estilos a las letras */
+
+.card__section01 img {
+    width: 100%;
+}
+
+.card__section02__text01 {
+    color: var(--Dark_grayish_blue);
+}
+
+.card__section02__text02 {
+    font-size: 28px;
+    color: black;
+}
+
+.card__section02__text03 {
+    color:var(--Dark_grayish_blue);
+    line-height: 21px;
+
+}
+
+.card__section02__prices {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--Dark_cyan);
+}
+
+.card__section02__price02 {
+    color: red;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.card__section02__button {
+    border-radius: 5px;
+    background-color: var(--Dark_cyan);
+    color: var(--White);
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Version Mobile */
+
+@media screen and (max-width:420px) {
+
+    body {
+        background-color: antiquewhite;
+    }
+
+    .card{
+        grid-template-areas:
+        "section_01 section_01"
+        "section_02 section_02" 
+        ;
+    }
+
+    .card__section01 img {
+        content: url(images/image-product-mobile.jpg);
+        width: 100%;
+    }
+    
+}
